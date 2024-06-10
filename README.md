@@ -28,7 +28,8 @@ The set-up and compilation is for macOS. Linux is similar, for example:
 	export LD_LIBRARY_PATH=/usr/lib64/R/lib
  	cc -o rcall -g -I/usr/include/R -L$R_HOME/lib -lR -lRblas rcall.c
 	./rcall
- 
+
+See *rcall.c* and *add.R* for details.
 ## Litterature
 
 1. [How to call R function from C]( https://pabercrombie.com/wordpress/2014/05/how-to-call-an-r-function-from-c/)
