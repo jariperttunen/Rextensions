@@ -12,7 +12,6 @@ and the matrix used is *double*.
 To set-up R environment (macOS Terminal command line):
 
 	export R_HOME=/Library/Frameworks/R.framework/Resources
-	export LD_LIBRARY_PATH=/Library/Frameworks/R.framework/Resources/lib
 	
 To compile the exercise:
 
@@ -25,7 +24,6 @@ To run the exercise:
 The set-up and compilation is for macOS. Linux is similar, for example:
 
 	export R_HOME=/usr/lib64/R/
-	export LD_LIBRARY_PATH=/usr/lib64/R/lib
  	cc -o rcall -g -I/usr/include/R -L$R_HOME/lib -lR -lRblas rcall.c
 	./rcall
 
