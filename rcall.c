@@ -2,7 +2,7 @@
 #include <Rembedded.h>
 #include <string.h>
 /**
-* Invokes the command source("foo.R").
+* Invokes the R command source(rfile), e.g. source("add.R")
 */
 void source(const char *name)
 {
