@@ -22,8 +22,13 @@ To run the exercise:
 	
 	./rcall
 
-The set-up and compilation is for macOS. Linux is similar.
+The set-up and compilation is for macOS. Linux is similar, for example:
 
+	export R_HOME=/usr/lib64/R/
+	export LD_LIBRAY_PATH=/usr/lib64/R/lib
+ 	cc -o rcall -g -I/usr/include/R -L$R_HOME/lib -lR -lRblas rcall.c
+	./rcall
+ 
 ## Litterature
 
 1. [How to call R function from C]( https://pabercrombie.com/wordpress/2014/05/how-to-call-an-r-function-from-c/)
