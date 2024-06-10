@@ -35,6 +35,6 @@ See *rcall.c* and *add.R* for details.
 1. [How to call R function from C]( https://pabercrombie.com/wordpress/2014/05/how-to-call-an-r-function-from-c/)
   - Based on this example. Extended the example to *double* datatype and for matrices.
   
-2. [Writing R exensions](https://cran.r-project.org/doc/manuals/R-exts.html#Handling-R-objects-in-C)
+2. [Writing R extensions](https://cran.r-project.org/doc/manuals/R-exts.html#Handling-R-objects-in-C)
   - Must read! Official guide to R extensions including required 
     functions and  datatypes used in the exercise.
