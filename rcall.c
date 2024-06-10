@@ -69,7 +69,7 @@ int main()
      }
    }
 
-   //Allocate R matrix, copy the C vector to it
+   //Allocate R matrix, copy the C matrix to it
    SEXP r_arg = PROTECT(allocMatrix(REALSXP, x, y));
    double* crm = REAL(r_arg);
    for (int i=0; i < x; i++){
