@@ -37,4 +37,4 @@ See *rcall.c* and *add.R* for details.
   
 2. [Writing R extensions](https://cran.r-project.org/doc/manuals/R-exts.html#Handling-R-objects-in-C)
   - *Must read*! Official guide to R extensions including required 
-    functions and  datatypes used in the exercise.
+    functions and  datatypes used in the Rextensions exercise.
