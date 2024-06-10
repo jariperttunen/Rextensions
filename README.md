@@ -26,7 +26,7 @@ The set-up and compilation is for macOS. Linux is similar.
 
 ## Litterature
 
-1.[How to call R function from C]( https://pabercrombie.com/wordpress/2014/05/how-to-call-an-r-function-from-c/)
+1. [How to call R function from C]( https://pabercrombie.com/wordpress/2014/05/how-to-call-an-r-function-from-c/)
   - Based on this example. Extended the example to *double* datatype and for matrices.
   
 2. [Writing R exensions](https://cran.r-project.org/doc/manuals/R-exts.html#Handling-R-objects-in-C)
