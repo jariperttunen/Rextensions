@@ -14,7 +14,7 @@ To set-up R environment (macOS Terminal command line):
 	export R_HOME=/Library/Frameworks/R.framework/Resources
 	export LD_LIBRARY_PATH=/Library/Frameworks/R.framework/Resources/lib
 	
-To compile the excercise:
+To compile the exercise:
 
 	cc -o rcall -g -I$R_HOME/include -L$R_HOME/lib -lR -lRblas rcall.c
 	
