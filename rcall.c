@@ -40,13 +40,13 @@ int main()
  
    // Execute the function
    int errorOccurred;
-   SEXP ret = R_tryEval(add1_call, R_GlobalEnv, &errorOccurred);
+   SEXP retval = R_tryEval(add1_call, R_GlobalEnv, &errorOccurred);
 
    if (!errorOccurred){
-     double *val = REAL(ret);
+     double *val = REAL(retval);
      
      printf("C received from R\n");
-     for (int i = 0; i < LENGTH(ret); i++){
+     for (int i = 0; i < LENGTH(retval); i++){
        printf("%0.1f, ", val[i]);
      }
      printf("\n\n");
@@ -85,11 +85,11 @@ int main()
    addm_call=PROTECT(lang2(install("addm"), r_arg));
    
    // Execute the function
-   int errorOccurred2;
-   SEXP ret1 = R_tryEval(addm_call, R_GlobalEnv, &errorOccurred2);
+   int errorOccurred1;
+   SEXP retval1 = R_tryEval(addm_call, R_GlobalEnv, &errorOccurred1);
 
-   if (!errorOccurred){
-     double *m_val = REAL(ret1);
+   if (!errorOccurred1){
+     double *m_val = REAL(retval1);
      
      printf("C received from R\n");
      for (int i = 0; i < x; i++){
