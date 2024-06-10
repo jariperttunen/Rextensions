@@ -20,6 +20,7 @@ int main()
   char *r_argv[] = { "R", "--silent" };
   Rf_initEmbeddedR(r_argc, r_argv);
 
+  //Create the C array
   double a[] = { 1.0, 2.0, 3.0, 4.0, 5.0 };
   int alen = 5;
 
@@ -33,7 +34,7 @@ int main()
   arg = PROTECT(allocVector(REALSXP, alen));
   memcpy(REAL(arg), a, alen * sizeof(double));
 
-  //Setup a call to the R function 
+  //Setup the call to the R function 
   SEXP add1_call;
   add1_call=PROTECT(lang2(install("add1"), arg));
  
@@ -51,12 +52,13 @@ int main()
      printf("\n\n");
    }
 
-   // Unprotect add1_call and arg 
+   // Unprotect add1_call and arg, i.e. release for carbage collection 
    UNPROTECT(2);
 
    //---------------------------------
    printf("2. Matrix Exercise\n");
    printf("------------------\n");
+   //Create the C matrix
    const int x=5,y=6;
    double m[x][y];
    double num=1;
@@ -66,16 +68,19 @@ int main()
        num++;
      }
    }
-   
+
+   //Allocate R matrix, copy the C vector to it
    SEXP r_arg = PROTECT(allocMatrix(REALSXP, x, y));
    double* crm = REAL(r_arg);
    for (int i=0; i < x; i++){
      for (int j=0; j < y; j++){
+       //Note we have the vector view to r_arg via crm as double*.
+       //We must manually index the crm as C matrix
        crm[i+x*j]=m[i][j];
      }
    }
 
-   //Setup a call to the R function 
+   //Setup the call to the R function 
    SEXP addm_call;
    addm_call=PROTECT(lang2(install("addm"), r_arg));
    
@@ -96,6 +101,7 @@ int main()
      printf("\n");
    }
 
+   //Realease for carbage collection
    UNPROTECT(2);
    // Release R environment
    Rf_endEmbeddedR(0);
