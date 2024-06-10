@@ -2,7 +2,7 @@
 Demonstrating calling R functions from C. Two examples are available,
 one for vectors and one for matrices.
 
-The two examples create vector and matrix respectively as data, 
+The two examples create one vector and one matrix respectively as data, 
 pass the data to R functions that make vector and matrix addition 
 in R style and return the results to C. The datatype for the vector 
 and the matrix used is *double*.
