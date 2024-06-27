@@ -20,6 +20,7 @@ int main()
   char *r_argv[] = { "R", "--silent" };
   Rf_initEmbeddedR(r_argc, r_argv);
 
+  
   //Create the C array
   double a[] = { 1.0, 2.0, 3.0, 4.0, 5.0 };
   int alen = 5;
@@ -33,7 +34,12 @@ int main()
   SEXP arg;
   arg = PROTECT(allocVector(REALSXP, alen));
   memcpy(REAL(arg), a, alen * sizeof(double));
-
+  printf("In C program\n");
+  printf("C sending data: ");
+  for (int i=0; i<alen; i++){
+    printf("%0.0f ",a[i]);
+  }
+  printf("\n\n");
   //Setup the call to the R function 
   SEXP add1_call;
   add1_call=PROTECT(lang2(install("add1"), arg));
@@ -44,7 +50,7 @@ int main()
 
    if (!errorOccurred){
      double *val = REAL(retval);
-     
+     printf("In C program\n");
      printf("C received from R: ");
      for (int i = 0; i < LENGTH(retval); i++){
        printf("%0.0f ", val[i]);
@@ -71,7 +77,14 @@ int main()
        num++;
      }
    }
-
+   printf("In C program\n");
+   printf("C matrix\n");
+   for (int i=0; i < x; i++){
+     for (int j=0; j < y; j++){
+       printf("%0.0f ", m[i][j]);
+     }
+     printf("\n");
+   }
    //Allocate R matrix, copy the C matrix to it
    SEXP r_arg = PROTECT(allocMatrix(REALSXP, x, y));
    double* crm = REAL(r_arg);
@@ -96,7 +109,7 @@ int main()
    for (int i=0; i < x*y; i++){
      printf("%0.0f ", crm[i]);
    }
-   printf("\n");
+   printf("\n\n");
     
    //Setup the call to the R function 
    SEXP addm_call;
@@ -108,7 +121,7 @@ int main()
 
    if (!errorOccurred1){
      double *m_val = REAL(retval1);
-     
+     printf("In C program\n");
      printf("C received from R:\n");
      printf("Matrix in memory : ");
      for (int i=0; i < x*y; i++){

@@ -1,5 +1,6 @@
 
 add1 <- function(a) {
+    cat("In R program","\n")
     cat("R received vector from C: ", a, "\n")
     cat("Is double",is.double(a),"\n")
     cat("Is vector",is.vector(a),"\n")
@@ -7,11 +8,12 @@ add1 <- function(a) {
     cat("Dimensions",dim(a),"\n")
     cat("Length",length(a),"\n")
     a = a + 1.0;
-    cat("After addition",a,"\n")
+    cat("After addition",a,"\n\n")
     return(a)
 }
 
 addm <- function(m){
+    cat("In R program","\n")
     cat("R received data from C:",m,"\n")
     cat("Is double",is.double(m),"\n")
     cat("Is matrix",is.matrix(m),"\n")
@@ -33,5 +35,6 @@ addm <- function(m){
         }
         cat("\n")
     }
+    cat("\n")
     return (m)
 }
