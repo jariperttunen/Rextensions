@@ -58,6 +58,8 @@ int main()
    //---------------------------------
    printf("2. Matrix Exercise\n");
    printf("------------------\n");
+   printf("Note the C matrix in row first order,\n");
+   printf("while R uses column first order.\n\n");
    //Create the C matrix
    const int x=5,y=6;
    double m[x][y];
@@ -75,11 +77,24 @@ int main()
    for (int i=0; i < x; i++){
      for (int j=0; j < y; j++){
        //Note we have the vector view to r_arg via crm as double*.
-       //We must manually index the crm as C matrix
+       //We must manually index the crm as matrix.
+       //Note we explicitly arrange numbers in column first order
        crm[i+x*j]=m[i][j];
      }
    }
 
+   printf("C matrix in memory:     ");
+   double* v1=&m[0][0];
+   for (int i=0; i < x*y; i++){
+     printf("%0.0f ", v1[i]);
+   }
+   printf("\n");
+   printf("C sending data to R:    ");
+   for (int i=0; i < x*y; i++){
+     printf("%0.0f ", crm[i]);
+   }
+   printf("\n");
+    
    //Setup the call to the R function 
    SEXP addm_call;
    addm_call=PROTECT(lang2(install("addm"), r_arg));
@@ -91,9 +106,16 @@ int main()
    if (!errorOccurred1){
      double *m_val = REAL(retval1);
      
-     printf("C received from R\n");
+     printf("C received from R:\n");
+     printf("Matrix in memory : ");
+     for (int i=0; i < x*y; i++){
+       printf("%0.0f ", crm[i]);
+     }
+     printf("\n");
+     printf("Indexing matrix in column first order:\n");
      for (int i = 0; i < x; i++){
        for (int j = 0; j < y; j++){
+	 //Note that we are indexing explicitely in column first order
 	 printf("%0.1f, ", m_val[i+x*j]);
        }
        printf("\n");
