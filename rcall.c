@@ -45,9 +45,9 @@ int main()
    if (!errorOccurred){
      double *val = REAL(retval);
      
-     printf("C received from R\n");
+     printf("C received from R: ");
      for (int i = 0; i < LENGTH(retval); i++){
-       printf("%0.1f, ", val[i]);
+       printf("%0.0f ", val[i]);
      }
      printf("\n\n");
    }
@@ -116,7 +116,7 @@ int main()
      for (int i = 0; i < x; i++){
        for (int j = 0; j < y; j++){
 	 //Note that we are indexing explicitely in column first order
-	 printf("%0.1f, ", m_val[i+x*j]);
+	 printf("%0.0f ", m_val[i+x*j]);
        }
        printf("\n");
      }
