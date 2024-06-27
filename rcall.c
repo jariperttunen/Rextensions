@@ -83,13 +83,15 @@ int main()
      }
    }
 
-   printf("C matrix in memory:     ");
+   printf("C matrix in memory\n");
+   printf("(row first order):      ");
    double* v1=&m[0][0];
    for (int i=0; i < x*y; i++){
      printf("%0.0f ", v1[i]);
    }
    printf("\n");
-   printf("C sending data to R:    ");
+   printf("C sending data to R\n");
+   printf("(column first order):   ");  
    for (int i=0; i < x*y; i++){
      printf("%0.0f ", crm[i]);
    }
