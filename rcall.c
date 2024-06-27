@@ -59,7 +59,8 @@ int main()
    printf("2. Matrix Exercise\n");
    printf("------------------\n");
    printf("Note the C matrix in row first order,\n");
-   printf("while R uses column first order.\n\n");
+   printf("while R uses column first order.\n");
+   printf("See rcall.c for details\n\n");
    //Create the C matrix
    const int x=5,y=6;
    double m[x][y];
@@ -129,6 +130,6 @@ int main()
    UNPROTECT(2);
    // Release R environment
    Rf_endEmbeddedR(0);
-
+   printf("Done\n");
    return 0;
 }
