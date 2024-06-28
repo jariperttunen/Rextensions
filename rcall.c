@@ -142,7 +142,7 @@ int main()
    //Realease for carbage collection
    UNPROTECT(2);
 
-   printf("3. Matrix exercise, conversion to row-first in R\n");
+   printf("3. Matrix exercise,  match row-first data in R\n");
    printf("---------------------------------------------------\n");
    printf("1. In C program\n");
    printf("C matrix\n");
