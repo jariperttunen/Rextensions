@@ -1,20 +1,21 @@
 
-add1 <- function(a) {
-    cat("In R program","\n")
-    cat("R received vector from C: ", a, "\n")
-    cat("Is double",is.double(a),"\n")
-    cat("Is vector",is.vector(a),"\n")
-    cat("Is matrix",is.matrix(a),"\n")
-    cat("Dimensions",dim(a),"\n")
-    cat("Length",length(a),"\n")
-    a = a + 1.0;
-    cat("After addition",a,"\n\n")
-    return(a)
+add1 <- function(v) {
+    cat("2. In R program","\n")
+    cat("R received vector from C: ", v, "\n")
+    cat("Is double",is.double(v),"\n")
+    cat("Is vector",is.vector(v),"\n")
+    cat("Is matrix",is.matrix(v),"\n")
+    cat("Dimensions",dim(v),"\n")
+    cat("Length",length(v),"\n")
+    v = v + 1.0;
+    cat("Vector after addition v=v+1:",v,"\n\n")
+    return(v)
 }
 
 addm <- function(m){
-    cat("In R program","\n")
-    cat("R received data from C:",m,"\n")
+    cat("2. In R program","\n")
+    cat("R received matrix from C\n")
+    cat("Matrix in contiguous memory:",m,"\n")
     cat("Is double",is.double(m),"\n")
     cat("Is matrix",is.matrix(m),"\n")
     cat("Is vector",is.vector(m),"\n")
@@ -28,7 +29,7 @@ addm <- function(m){
         cat("\n")
     }
     m = m+2
-    cat("After addition\n")
+    cat("Matrix after addition m=m+2:\n")
     for (i in 1:x){
         for (j in 1:y){
             cat(m[i,j]," ")

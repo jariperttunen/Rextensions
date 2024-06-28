@@ -34,8 +34,8 @@ int main()
   SEXP arg;
   arg = PROTECT(allocVector(REALSXP, alen));
   memcpy(REAL(arg), a, alen * sizeof(double));
-  printf("In C program\n");
-  printf("C sending data: ");
+  printf("1. In C program\n");
+  printf("C sending vector to R: ");
   for (int i=0; i<alen; i++){
     printf("%0.0f ",a[i]);
   }
@@ -50,8 +50,8 @@ int main()
 
    if (!errorOccurred){
      double *val = REAL(retval);
-     printf("In C program\n");
-     printf("C received from R: ");
+     printf("3. In C program\n");
+     printf("C received vector from R: ");
      for (int i = 0; i < LENGTH(retval); i++){
        printf("%0.0f ", val[i]);
      }
@@ -64,7 +64,7 @@ int main()
    //---------------------------------
    printf("2. Matrix Exercise\n");
    printf("------------------\n");
-   printf("Note the C matrix in row first order,\n");
+   printf("Note the C matrix is in row first order,\n");
    printf("while R uses column first order.\n");
    printf("See rcall.c for details\n\n");
    //Create the C matrix
@@ -77,7 +77,7 @@ int main()
        num++;
      }
    }
-   printf("In C program\n");
+   printf("1. In C program\n");
    printf("C matrix\n");
    for (int i=0; i < x; i++){
      for (int j=0; j < y; j++){
@@ -97,14 +97,14 @@ int main()
      }
    }
 
-   printf("C matrix in memory\n");
+   printf("C matrix in contiguous memory\n");
    printf("(row first order):      ");
    double* v1=&m[0][0];
    for (int i=0; i < x*y; i++){
      printf("%0.0f ", v1[i]);
    }
    printf("\n");
-   printf("C sending data to R\n");
+   printf("C sending matrix to R\n");
    printf("(column first order):   ");  
    for (int i=0; i < x*y; i++){
      printf("%0.0f ", crm[i]);
@@ -121,9 +121,9 @@ int main()
 
    if (!errorOccurred1){
      double *m_val = REAL(retval1);
-     printf("In C program\n");
-     printf("C received from R:\n");
-     printf("Matrix in memory : ");
+     printf("3. In C program\n");
+     printf("C received matrix from R:\n");
+     printf("Matrix in contiguous memory : ");
      for (int i=0; i < x*y; i++){
        printf("%0.0f ", crm[i]);
      }
