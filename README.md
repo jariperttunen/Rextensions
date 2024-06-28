@@ -16,11 +16,11 @@ The datatype for the vector and the matrices used is *double*.
 
 ## Usage
 
-To set-up R environment (macOS Terminal command line):
+To set-up R environment in macOS (Terminal command line):
 
 	export R_HOME=/Library/Frameworks/R.framework/Resources
 	
-To compile the exercise:
+R_HOME denotes the R installation location. To compile the exercise:
 
 	cc -o rcall -g -I$R_HOME/include -L$R_HOME/lib -lR -lRblas rcall.c
 	
@@ -28,7 +28,7 @@ To run the exercise:
 	
 	./rcall
 
-The set-up and compilation is for macOS. Linux is similar, for example:
+The set-up and compilation in Linux is similar, for example:
 
 	export R_HOME=/usr/lib64/R/
  	cc -o rcall -g -I/usr/include/R -L$R_HOME/lib -lR -lRblas rcall.c
