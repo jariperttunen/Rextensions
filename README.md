@@ -1,11 +1,18 @@
 # R extensions
-Demonstrating calling R functions from C. Two examples are available,
-one for vectors and one for matrices.
+Demonstrating calling R functions from C. Three examples are available highlighting
+also row-major (row-first) vs. column-major (column-first) matrix storage organization
+in C and R respectively.
 
-The two examples create one vector and one matrix respectively as data, 
-pass the data to R functions that make vector and matrix addition 
-in R style and return the results to C. The datatype for the vector 
-and the matrix used is *double*.
+The first example creates one vector in C, passes on the vector to R function that
+makes vector addition in R style and returns the result vector back to C.
+
+The second exmpale creates one matrix in C, sends the matrix as column-first to R function
+that makes matrix addition in R style and returns the result matrix back to C. 
+
+The third example creates one matrix in C, sends the matrix as row-first to R function
+that converts the matrix column first for proper indexing in R.
+
+The datatype for the vector and the matrices used is *double*. 
 
 ## Usage
 
