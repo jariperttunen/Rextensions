@@ -7,7 +7,7 @@ The first example creates one vector in C, passes on the vector data to R functi
 makes vector addition in R style and returns the result vector back to C.
 
 The second example creates one matrix in C, sends the matrix data as column-first to R function,
-creates R matrix and performs  matrix addition in R style and returns the result matrix back to C. 
+that creates R matrix and performs  matrix addition in R style and returns the result matrix back to C. 
 
 The third example creates one matrix in C, sends the matrix data as row-first to R function
 that creates (column-first) R matrix to match the row-first data for proper indexing in R.
