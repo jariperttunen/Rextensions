@@ -39,3 +39,32 @@ addm <- function(m){
     cat("\n")
     return (m)
 }
+
+mrowfirst<-function(m){
+    cat("2. In R program","\n")
+    cat("R received matrix from C\n")
+    cat("Matrix in contiguous memory:",m,"\n")
+    cat("Is double",is.double(m),"\n")
+    cat("Is matrix",is.matrix(m),"\n")
+    cat("Is vector",is.vector(m),"\n")
+    cat("Matrix dimensions",dim(m),"\n")
+    cat("Indexing matrix","\n")
+    x = dim(m)[1]
+    y = dim(m)[2]
+    for (i in 1:x){
+        for (j in 1:y){
+            cat(m[i,j]," ")
+        }
+        cat("\n")
+    }
+    cat("Create new matrix in row first order","\n")
+    m1<-matrix(m,nrow=x,ncol=y,byrow=TRUE)
+    for (i in 1:x){
+        for (j in 1:y){
+            cat(m1[i,j]," ")
+        }
+        cat("\n")
+    }
+    cat("The new matrix in contiguous memory",m1,"\n")
+    
+}

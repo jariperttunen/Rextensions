@@ -141,6 +141,45 @@ int main()
 
    //Realease for carbage collection
    UNPROTECT(2);
+
+   printf("3. Matrix conversion to row first in R\n");
+   printf("--------------------------------------\n");
+   printf("1. In C program\n");
+   printf("C matrix\n");
+   for (int i=0; i < x; i++){
+     for (int j=0; j < y; j++){
+       printf("%0.0f ", m[i][j]);
+     }
+     printf("\n");
+   }
+   //Allocate R matrix, copy the C matrix to it
+   SEXP r_arg2 = PROTECT(allocMatrix(REALSXP, x, y));
+   double* crm2 = REAL(r_arg2);
+   for (int i=0; i < x; i++){
+     for (int j=0; j < y; j++){
+       //Note we have the vector view to r_arg2 via crm2 as double*.
+       //We must manually index the crm2 as matrix.
+       //Note we explicitly arrange numbers in row first order
+       crm2[i*y+j]=m[i][j];
+     }
+   }
+   printf("C sending matrix to R\n");
+   printf("(row first order):   ");  
+   for (int i=0; i < x*y; i++){
+     printf("%0.0f ", crm2[i]);
+   }
+   printf("\n\n");
+
+   //Setup the call to the R function 
+   SEXP mrowfirst_call;
+   mrowfirst_call=PROTECT(lang2(install("mrowfirst"), r_arg2));
+   
+   // Execute the function
+   int errorOccurred2;
+   SEXP retval2 = R_tryEval(mrowfirst_call, R_GlobalEnv, &errorOccurred2);
+
+   //Realease for carbage collection
+   UNPROTECT(2);
    // Release R environment
    Rf_endEmbeddedR(0);
    printf("Done\n");
