@@ -41,5 +41,5 @@ See *rcall.c* and *add.R* for details.
   - Based on this example. Extended the example to *double* datatype and for matrices.
   
 2. [Writing R extensions](https://cran.r-project.org/doc/manuals/R-exts.html)
-  - *Must read*! Official guide to R extensions including required 
+  - *Must read, especially the chapter 5.9 Handling R objects in C*! Official guide to R extensions including required 
     functions and  datatypes used in this *Rextensions* exercise.
