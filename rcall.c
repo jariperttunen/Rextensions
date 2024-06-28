@@ -28,7 +28,7 @@ int main()
   // Load the R function (source function defined above)
   source("add.R");
 
-  printf("1. Vector Exercise\n");
+  printf("1. Vector exercise\n");
   printf("-------------------\n");
   // Allocate an R vector and copy the C array into it.
   SEXP arg;
@@ -62,7 +62,7 @@ int main()
    UNPROTECT(2);
 
    //---------------------------------
-   printf("2. Matrix Exercise\n");
+   printf("2. Matrix exercise\n");
    printf("------------------\n");
    printf("Note the C matrix is in row first order,\n");
    printf("while R uses column first order.\n");
@@ -142,8 +142,8 @@ int main()
    //Realease for carbage collection
    UNPROTECT(2);
 
-   printf("3. Matrix conversion to row first in R\n");
-   printf("--------------------------------------\n");
+   printf("3. Matrix exercise, conversion to row-first in R\n");
+   printf("---------------------------------------------------\n");
    printf("1. In C program\n");
    printf("C matrix\n");
    for (int i=0; i < x; i++){

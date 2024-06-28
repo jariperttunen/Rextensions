@@ -57,7 +57,7 @@ mrowfirst<-function(m){
         }
         cat("\n")
     }
-    cat("Create new matrix in row first order","\n")
+    cat("Create new matrix to match row-first order","\n")
     m1<-matrix(m,nrow=x,ncol=y,byrow=TRUE)
     for (i in 1:x){
         for (j in 1:y){
@@ -65,6 +65,6 @@ mrowfirst<-function(m){
         }
         cat("\n")
     }
-    cat("The new matrix in contiguous memory",m1,"\n")
+    cat("The new matrix in contiguous memory:",m1,"\n")
     
 }
