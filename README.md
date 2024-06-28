@@ -10,7 +10,7 @@ The second example creates one matrix in C, sends the matrix data as column-firs
 that makes matrix addition in R style and returns the result matrix back to C. 
 
 The third example creates one matrix in C, sends the matrix data as row-first to R function
-that converts the matrix to column-first for proper indexing in R.
+that creates (column-first) R matrix to match the row-first data for proper indexing in R.
 
 The datatype for the vector and the matrices used is *double*. 
 
