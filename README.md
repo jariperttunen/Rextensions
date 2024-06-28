@@ -3,7 +3,7 @@ Demonstrating calling R functions from C. Three examples are available highlight
 also row-major (row-first) vs. column-major (column-first) matrix storage organization
 in C and R respectively.
 
-The first example creates one vector in C, passes on the vector to R function that
+The first example creates one vector in C, passes on the vector data to R function that
 makes vector addition in R style and returns the result vector back to C.
 
 The second example creates one matrix in C, sends the matrix data as column-first to R function
