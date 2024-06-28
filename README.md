@@ -6,10 +6,10 @@ in C and R respectively.
 The first example creates one vector in C, passes on the vector to R function that
 makes vector addition in R style and returns the result vector back to C.
 
-The second exmpale creates one matrix in C, sends the matrix as column-first to R function
+The second exmpale creates one matrix in C, sends the matrix data as column-first to R function
 that makes matrix addition in R style and returns the result matrix back to C. 
 
-The third example creates one matrix in C, sends the matrix as row-first to R function
+The third example creates one matrix in C, sends the matrix data as row-first to R function
 that converts the matrix to column-first for proper indexing in R.
 
 The datatype for the vector and the matrices used is *double*. 
