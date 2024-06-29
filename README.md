@@ -16,7 +16,8 @@ The datatype for the vector and the matrices used is *double*.
 
 ## Usage
 
-To set-up R environment in macOS (Terminal command line):
+The R runtime system requires R_HOME environment variable. 
+In macOS type (Terminal command line):
 
 	export R_HOME=/Library/Frameworks/R.framework/Resources
 	
@@ -28,13 +29,14 @@ To run the exercise:
 	
 	./rcall
 
-The set-up and compilation in Linux is similar, for example:
+The series of steps in Linux are similar, for example:
 
 	export R_HOME=/usr/lib64/R/
  	cc -o rcall -g -I/usr/include/R -L$R_HOME/lib -lR -lRblas rcall.c
 	./rcall
 
 See *rcall.c* and *add.R* for details.
+
 ## Litterature
 
 1. [How to call R function from C]( https://pabercrombie.com/wordpress/2014/05/how-to-call-an-r-function-from-c/)
