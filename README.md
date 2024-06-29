@@ -24,15 +24,15 @@ In macOS type (Terminal command line):
 
 	export R_HOME=/Library/Frameworks/R.framework/Resources
 	
-R_HOME denotes the R installation location. To compile the exercise:
+R_HOME denotes the R installation location. To compile the examples:
 
 	cc -o rcall -g -I$R_HOME/include -L$R_HOME/lib -lR -lRblas rcall.c
 	
-To run the exercise:
+To run the examples:
 	
 	./rcall
 
-The series of steps in Linux are similar, for example:
+Linux is similar, for example:
 
 	export R_HOME=/usr/lib64/R/
  	cc -o rcall -g -I/usr/include/R -L$R_HOME/lib -lR -lRblas rcall.c
