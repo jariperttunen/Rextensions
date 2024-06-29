@@ -45,4 +45,4 @@ Linux is similar, for example:
   
 2. [Writing R extensions](https://cran.r-project.org/doc/manuals/R-exts.html)
   - *Must read! Especially the chapter 5.9 Handling R objects in C*!
-  - Official guide to R extensions including required functions and  datatypes used in this *Rextensions* exercise.
+  - Official guide to R extensions including required functions and  datatypes used in these *Rextensions* examples.
