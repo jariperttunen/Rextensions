@@ -13,9 +13,9 @@ The third example uses the C matrix from the second example, sends the matrix da
 as *row-first* to R function that creates R matrix filled by rows to acquire the same view 
 with the original C matrix for correct indexing in R.
 
-The datatype for the vector and the matrices used is *double*. 
+The datatype for the vector and the matrices used is *double*. See *rcall.c* and *add.R* for details.
 
-See *rcall.c* and *add.R* for details.
+Note that albeit the C prgram *rcall.c* is compiled the calls to R functions proceed via R interpreter. 
 
 ## Usage
 
