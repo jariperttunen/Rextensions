@@ -57,7 +57,7 @@ mrowfirst<-function(m){
         }
         cat("\n")
     }
-    cat("Create new matrix to match row-first order","\n")
+    cat("Create new matrix filled by rows","\n")
     m1<-matrix(m,nrow=x,ncol=y,byrow=TRUE)
     for (i in 1:x){
         for (j in 1:y){
