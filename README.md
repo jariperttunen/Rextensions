@@ -1,6 +1,6 @@
 # R extensions
 Three examples demonstrate techniques to call R functions from C
-with R's C library API, a.k.a *R extensions*. They also highlight row-major (row-first) 
+with R's C library API, a.k.a. *R extensions*. They also highlight row-major (row-first) 
 vs. column-major (column-first) matrix storage layout in C and R respectively.
 
 The first example creates one vector in C, passes on the vector data to R function that
