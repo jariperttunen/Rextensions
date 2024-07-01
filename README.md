@@ -15,7 +15,7 @@ with the original C matrix for correct indexing in R.
 
 The datatype for the vector and the matrices used is *double*. See *rcall.c* and *add.R* for details.
 
-Note that albeit the C program *rcall.c* is compiled the calls to R functions in R extensions are always 
+Note that in R extensions C programs are compiled but the calls to R functions are always 
 executed by the R interpreter. 
 
 ## Usage
