@@ -33,6 +33,8 @@ int main()
   // Allocate an R vector and copy the C array into it.
   SEXP arg;
   arg = PROTECT(allocVector(REALSXP, alen));
+  //Note SEXP internals are hidden but the function REAL
+  //provides access to the vector data
   memcpy(REAL(arg), a, alen * sizeof(double));
   printf("1. In C program\n");
   printf("C sending vector to R: ");
@@ -66,7 +68,6 @@ int main()
    printf("------------------\n");
    printf("Note the C matrix is in row first order,\n");
    printf("while R uses column first order.\n");
-   printf("See rcall.c for details\n\n");
    //Create the C matrix
    const int x=5,y=6;
    double m[x][y];
@@ -90,9 +91,9 @@ int main()
    double* crm = REAL(r_arg);
    for (int i=0; i < x; i++){
      for (int j=0; j < y; j++){
-       //Note we have the vector view to r_arg via crm as double*.
-       //We must manually index the crm as matrix.
-       //Note we explicitly arrange numbers in column first order
+       //REAL provides access to r_arg matrix data as double* vector crm.
+       //We must explicitely index the crm vector as matrix
+       //using column first order.
        crm[i+x*j]=m[i][j];
      }
    }
@@ -157,9 +158,9 @@ int main()
    double* crm2 = REAL(r_arg2);
    for (int i=0; i < x; i++){
      for (int j=0; j < y; j++){
-       //Note we have the vector view to r_arg2 via crm2 as double*.
-       //We must manually index the crm2 as matrix.
-       //Note we explicitly arrange numbers in row first order
+       //Note we have the view to r_arg2 data via crm2 as double* vector.
+       //We index the crm2 vector explicitely as matrix, this time
+       //arranging numbers in row first order
        crm2[i*y+j]=m[i][j];
      }
    }
@@ -176,7 +177,7 @@ int main()
    
    // Execute the function
    int errorOccurred2;
-   SEXP retval2 = R_tryEval(mrowfirst_call, R_GlobalEnv, &errorOccurred2);
+   R_tryEval(mrowfirst_call, R_GlobalEnv, &errorOccurred2);
 
    //Realease for carbage collection
    UNPROTECT(2);

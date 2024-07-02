@@ -39,6 +39,13 @@ Linux is similar, for example:
  	cc -o rcall -g -I/usr/include/R -L$R_HOME/lib -lR -lRblas rcall.c
 	./rcall
 
+## R SEXP 
+R Extensions provides SEXP data structure (or more precisly the pointer to a SEXPREC structure)
+that implements datatypes in R, building blocks of R objects (arithemtic types, vectors, matrices, 
+lists and the like). For the R Internals user SEXP is a variable bound to a value.
+The implementation details of SEXP are hidden from the user but the internals can be quried
+with SEXP's functional API provided. The most common use case perhaps is the need to access the data itself.
+ 
 ## Litterature
 
 1. [How to call R function from C]( https://pabercrombie.com/wordpress/2014/05/how-to-call-an-r-function-from-c/)
@@ -47,3 +54,5 @@ Linux is similar, for example:
 2. [Writing R extensions](https://cran.r-project.org/doc/manuals/R-exts.html)
   - *Must read! Especially the chapter 5.9 Handling R objects in C*.
   - Official guide to R extensions including required functions and  datatypes used in these *Rextensions* examples.
+3. [R Internals](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html)
+  - Technical document of the implementation of R, meant for the R development team.
