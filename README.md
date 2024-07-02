@@ -43,10 +43,10 @@ Linux is similar, for example:
 R  Extensions  provides  SEXP data  structure[^sexp]  that  implements
 datatypes  in  R, building  blocks  of  R objects  (arithmetic  types,
 vectors, matrices, lists and the like).  For the R Internals user SEXP
-perform as a variable bound to a value.  The implementation details of
-SEXP are  hidden from the user  but the internals can  be queried with
-SEXP's functional  API provided. The  most common use case  is perhaps
-the need to access the R object data.
+appears as an R variable bound to a value.  The implementation details
+of SEXP are hidden from the user but the internals can be queried with
+the  SEXP's functional  API  provided.  The most  common  use case  is
+perhaps the need to access R object data.
  
 ## Litterature
 
