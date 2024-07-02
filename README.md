@@ -1,6 +1,6 @@
-# R extensions
+# R Extensions
 Three examples demonstrate techniques to call R functions from C
-with R's C library API, a.k.a. *R extensions*. They also highlight row-major (row-first) 
+with R's C library API, a.k.a. *R Extensions*. They also highlight row-major (row-first) 
 vs. column-major (column-first) matrix storage layout in C and R respectively.
 
 The first example creates one vector in C, passes on the vector data to R function that
@@ -15,7 +15,7 @@ with the original C matrix for correct indexing in R.
 
 The datatype for the vector and the matrices used is *double*. See *rcall.c* and *add.R* for details.
 
-Note that in R extensions C programs are compiled but the calls to R functions are nevertheless
+Note that in R Extensions C programs are compiled but the calls to R functions are nevertheless
 always  executed by the R interpreter implemented in and accessible from the R's C library API. 
 
 ## Usage
@@ -42,7 +42,7 @@ Linux is similar, for example:
 ## R SEXP 
 R  Extensions  provides  SEXP data  structure[^sexp]  that  implements
 datatypes  in  R, building  blocks  of  R objects  (arithmetic  types,
-vectors, matrices, lists and the like).  For the R Internals user SEXP
+vectors, matrices, lists and the like).  For the R Extensions user SEXP
 appears as an R variable bound to a value.  The implementation details
 of SEXP are hidden from the user but the internals can be queried with
 the  SEXP's functional  API  provided.  The most  common  use case  is
@@ -53,9 +53,9 @@ perhaps the need to access R object data.
 1. [How to call R function from C]( https://pabercrombie.com/wordpress/2014/05/how-to-call-an-r-function-from-c/)
   - Based on this example. Extended the example to *double* datatype and for matrices.
   
-2. [Writing R extensions](https://cran.r-project.org/doc/manuals/R-exts.html)
+2. [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html)
   - *Must read! Especially the chapter 5.9 Handling R objects in C*.
-  - Official guide to R extensions including required functions and  datatypes used in these *Rextensions* examples.
+  - Official guide to R Extensions including required functions and  datatypes used in these R Extensions examples.
 3. [R Internals](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html)
   - Technical document of the implementation of R, meant for the R development team.
 
