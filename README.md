@@ -40,11 +40,13 @@ Linux is similar, for example:
 	./rcall
 
 ## R SEXP 
-R Extensions provides SEXP data structure (or more precisly the pointer to a SEXPREC structure)
-that implements datatypes in R, building blocks of R objects (arithemtic types, vectors, matrices, 
-lists and the like). For the R Internals user SEXP is a variable bound to a value.
-The implementation details of SEXP are hidden from the user but the internals can be quried
-with SEXP's functional API provided. The most common use case perhaps is the need to access the data itself.
+R  Extensions  provides  SEXP data  structure[^sexp]  that  implements
+datatypes  in  R, building  blocks  of  R objects  (arithmetic  types,
+vectors, matrices, lists and the like).  For the R Internals user SEXP
+perform as a variable bound to a value.  The implementation details of
+SEXP are  hidden from the user  but the internals can  be queried with
+SEXP's functional  API provided. The  most common use case  is perhaps
+the need to access the R object data.
  
 ## Litterature
 
@@ -56,3 +58,5 @@ with SEXP's functional API provided. The most common use case perhaps is the nee
   - Official guide to R extensions including required functions and  datatypes used in these *Rextensions* examples.
 3. [R Internals](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html)
   - Technical document of the implementation of R, meant for the R development team.
+
+[^sexp]: To be precise SEXP  is a  C pointer to a SEXPREC structure.
