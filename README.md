@@ -39,14 +39,14 @@ Linux is similar, for example:
  	cc -o rcall -g -I/usr/include/R -L$R_HOME/lib -lR -lRblas rcall.c
 	./rcall
 
-## R SEXP 
+## The SEXP data structure
 R  Extensions  provides  SEXP data  structure[^sexp]  that  implements
 datatypes  in  R, building  blocks  of  R objects  (arithmetic  types,
-vectors, matrices, lists and the like).  For the R Extensions user SEXP
-appears as an R variable bound to a value.  The implementation details
-of SEXP are hidden from the user but the internals can be queried with
-the  SEXP's functional  API  provided.  The most  common  use case  is
-perhaps the need to access R object data.
+vectors, matrices,  lists and  the like).  For  the R  Extensions user
+SEXP  models an  R  variable  bound to  a  value.  The  implementation
+details of  SEXP are  hidden from  the user but  the internals  can be
+queried with the SEXP's functional  API provided.  The most common use
+case is perhaps the need to access R object data.
  
 ## Litterature
 
@@ -59,4 +59,5 @@ perhaps the need to access R object data.
 3. [R Internals](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html)
   - Technical document of the implementation of R, meant for the R development team.
 
-[^sexp]: To be precise SEXP  is a  C pointer to a SEXPREC structure.
+[^sexp]: To be precise SEXP  is a  C pointer to a SEXPREC structure but the API is
+         for SEXP.
