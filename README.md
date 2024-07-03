@@ -58,6 +58,6 @@ case is perhaps the need to access R object data.
   - Official guide to R Extensions including required functions and  datatypes used in these R Extensions examples.
 3. [R Internals](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html)
   - Technical document of the implementation of R, meant for the R development team.
-  - Chapter 1.1 is devoted to SEXP data structure.
+  - Chapter 1.1 is devoted to the SEXP data structure.
 [^sexp]: To be precise SEXP  is a  C pointer to a SEXPREC structure but the API is
          for SEXP.
