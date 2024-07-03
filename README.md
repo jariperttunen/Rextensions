@@ -55,7 +55,8 @@ case is perhaps the need to access R object data.
   
 2. [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html)
   - *Must read! Especially the chapter 5.9 Handling R objects in C*.
-  - Official guide to R Extensions including required functions and  datatypes used in these R Extensions examples.
+  - Official guide to R Extensions including required functions and  datatypes used in these
+    three R Extensions examples.
 3. [R Internals](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html)
   - Technical document of the implementation of R, meant for the R development team.
   - Chapter 1.1 is devoted to the SEXP data structure.
