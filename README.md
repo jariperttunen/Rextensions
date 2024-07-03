@@ -46,7 +46,7 @@ vectors, matrices,  lists and  the like).  For  the R  Extensions user
 SEXP  models an  R  variable  bound to  a  value.  The  implementation
 details of  SEXP are  hidden from  the user but  the internals  can be
 queried with the SEXP's functional  API provided.  The most common use
-case is perhaps the need to access R object data.
+case is perhaps the need to access R object data directly.
  
 ## Litterature
 
@@ -55,8 +55,8 @@ case is perhaps the need to access R object data.
   
 2. [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html)
   - *Must read! Especially the chapter 5.9 Handling R objects in C*.
-  - Official guide to R Extensions including required functions and  datatypes used in these
-    three R Extensions examples.
+  - Official guide to R Extensions including documentation for 
+    functions and  datatypes used in these three R Extensions examples.
 3. [R Internals](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html)
   - Technical document of the implementation of R, meant for the R development team.
   - Chapter 1.1 is devoted to the SEXP data structure.
