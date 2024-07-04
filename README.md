@@ -46,8 +46,8 @@ vectors, matrices,  lists and  the like).  For  the R  Extensions user
 SEXP  models an  R  variable  bound to  a  value. *It is the SEXP variables
 that are used in information exchange between C and R*. The  implementation
 details of  SEXP are  hidden from  the user but  the internals  can be
-queried with the functional  API for SEXP.  The most common use
-case is perhaps the need to access R object data directly.
+queried with the functional  API for SEXP. A common use case is to access 
+the R object data directly.
  
 ## Litterature
 
