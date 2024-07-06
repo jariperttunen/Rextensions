@@ -63,9 +63,9 @@ int main()
    // Unprotect add1_call and arg, i.e. release for carbage collection 
    UNPROTECT(2);
 
-   //---------------------------------
-   printf("2. Matrix exercise\n");
-   printf("------------------\n");
+   //----------------------------------
+   printf("2. Matrix exercise, send column first data from C\n");
+   printf("-------------------------------------------------\n");
    printf("Note the C matrix is in row first order,\n");
    printf("while R uses column first order.\n");
    //Create the C matrix
@@ -93,7 +93,8 @@ int main()
      for (int j=0; j < y; j++){
        //REAL provides access to r_arg matrix data as double* vector crm.
        //We must explicitely index the crm vector as matrix
-       //using column first order.
+       //using column first order. Note that the indexing can be expanded
+       //to N-dimensional matrix (https://en.wikipedia.org/wiki/Row-_and_column-major_order)
        crm[i+x*j]=m[i][j];
      }
    }
@@ -143,8 +144,8 @@ int main()
    //Realease for carbage collection
    UNPROTECT(2);
 
-   printf("3. Matrix exercise,  match row-first data in R\n");
-   printf("---------------------------------------------------\n");
+   printf("3. Matrix exercise,  match row-first data from C in R\n");
+   printf("-----------------------------------------------------\n");
    printf("1. In C program\n");
    printf("C matrix\n");
    for (int i=0; i < x; i++){
@@ -160,7 +161,8 @@ int main()
      for (int j=0; j < y; j++){
        //Note we have the view to r_arg2 data via crm2 as double* vector.
        //We index the crm2 vector explicitely as matrix, this time
-       //arranging numbers in row first order
+       //arranging numbers in row first order. Note that the indexing can be expanded
+       //to N-dimensional matrix (https://en.wikipedia.org/wiki/Row-_and_column-major_order)
        crm2[i*y+j]=m[i][j];
      }
    }
