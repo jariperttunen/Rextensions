@@ -40,8 +40,8 @@ Linux is similar, for example:
 	./rcall
 
 ## The SEXP data structure
-R  Extensions  provides  SEXP data  structure[^sexp]  that  implements
-datatypes  in  R, building  blocks  of  R objects  (arithmetic  types,
+R  Extensions  provides  SEXP data  structure[^sexp]  that  abstracts
+all built-in datatypes  in  R, building  blocks  of  R objects  (arithmetic  types,
 vectors, matrices,  lists and  the like).  For  the R  Extensions user
 SEXP  models an  R  variable  bound to  a  value. *It is the SEXP variables
 that are used in information exchange between C and R*. The  implementation
