@@ -14,7 +14,7 @@ The third example uses the C matrix from the second example, sends the matrix da
 as *row-first* to R function that creates R matrix filled by rows to acquire the same view 
 with the original C matrix for correct indexing in R.
 
-The fourth example creates 3D matrix in C, rearranges row first layout to column first for R
+The fourth example creates a 3D matrix in C, rearranges row first layout to column first for R
 and passes the data as a vector to R. R receives the vector and creates 3D matrix with `array` type. 
 
 The datatype for the vector and the matrices used is *double*. See *rcall.c* and *add.R* for details.
