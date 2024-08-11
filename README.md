@@ -1,5 +1,5 @@
 # R Extensions
-Three examples demonstrate techniques to call R functions from C
+Four examples demonstrate techniques to call R functions from C
 with R's C library API, a.k.a. *R Extensions*. They also highlight row-major (row-first) 
 vs. column-major (column-first) matrix storage layout in C and R respectively.
 
@@ -12,6 +12,9 @@ that performs matrix addition in R style and returns the result matrix back to C
 The third example uses the C matrix from the second example, sends the matrix data 
 as *row-first* to R function that creates R matrix filled by rows to acquire the same view 
 with the original C matrix for correct indexing in R.
+
+The fourth example creates 3D matrix in C, rearranges row first layout to column first for R
+and passes the data as a vector to R. R receives the vector and creates 3D matrix with `array` type. 
 
 The datatype for the vector and the matrices used is *double*. See *rcall.c* and *add.R* for details.
 

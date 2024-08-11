@@ -68,3 +68,20 @@ mrowfirst<-function(m){
     cat("The new matrix in contiguous memory:",m1,"\n")
     
 }
+
+matrix3d <- function(v){
+    cat("2. In R program","\n")
+    cat("Received vector for 3D matrix","\n")
+    cat("Vector in contiguos memory",v,"\n")
+    cat("Creating 3D matrix from the vector\n")
+    m3d <- array(v, c(3,5,6));
+    for (i in 1:3){
+        for (j in 1:5){
+            for (k in 1:6){
+                cat(m3d[i,j,k]," ")
+            }
+            cat("\n")
+        }
+        cat("\n")
+    }
+}

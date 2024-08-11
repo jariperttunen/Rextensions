@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <Rinternals.h>
 #include <Rembedded.h>
 #include <string.h>
@@ -183,8 +184,68 @@ int main()
 
    //Realease for carbage collection
    UNPROTECT(2);
+   printf("\n");
+   printf("4. 3D matrix exercise\n");
+   printf("--------------------------\n");
+   const int n=3;
+   const int xdim=5;
+   const int ydim=6;
+   double m3[n][xdim][ydim];
+   num=1.0;
+   for (int i=0;i<n;i++){
+     for (int j=0;j<xdim;j++){
+       for (int k=0;k<ydim;k++){
+	 m3[i][j][k]=num++;
+       }
+     }
+   }
+   printf("1. In C program\n");
+   printf("Create 3D matrix\n");
+   for (int i=0;i<n;i++){
+     for (int j=0;j<xdim;j++){
+       for (int k=0;k<ydim;k++){
+	 printf("%0.0f ",m3[i][j][k]);
+       }
+       printf("\n");
+     }
+     printf("\n");
+   }
+   printf("3D matrix in contiguous memory\n");
+   double *v3 = malloc(n*xdim*ydim*sizeof(double));
+   v3=&m3[0][0][0];
+   for (int i=0; i< n*xdim*ydim;i++){
+     printf("%0.0f ", v3[i]);
+   }
+   printf("\n\n");
+   // Allocate an R vector and copy the C array into it.
+   SEXP r3_arg;
+   int m3size = n*xdim*ydim;
+   r3_arg = PROTECT(allocVector(REALSXP, m3size));
+   double* cr3 = REAL(r3_arg);
+   // Copy column first to R vector
+   printf("Create vector in column first order in contiguous memory for R\n");
+   for (int i=0;i<n;i++){
+     for (int j=0;j<xdim;j++){
+       for (int k=0;k<ydim;k++){
+	 //This is how R sees 3D vector column first
+	 cr3[i + j*n+k*n*xdim]=m3[i][j][k];
+       }
+     }
+   }
+   for (int i=0; i<n*xdim*ydim; i++){
+     printf("%0.0f ", cr3[i]);
+   }
+   printf("\n\n");
+   //Setup the call to the R function 
+   SEXP m3d_call;
+   m3d_call=PROTECT(lang2(install("matrix3d"), r3_arg));
+   // Execute the function
+   int errorOccurred4;
+   R_tryEval(m3d_call, R_GlobalEnv, &errorOccurred4);
+   UNPROTECT(2);
+   printf("\nDone\n");
    // Release R environment
    Rf_endEmbeddedR(0);
-   printf("Done\n");
+ 
    return 0;
 }
