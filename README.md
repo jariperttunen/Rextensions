@@ -1,4 +1,5 @@
 # R Extensions
+
 Four examples demonstrate techniques to call R functions from C
 with R's C library API, a.k.a. *R Extensions*. They also highlight row-major (row-first) 
 vs. column-major (column-first) matrix storage layout in C and R respectively.
@@ -43,14 +44,13 @@ Linux is similar, for example:
 	./rcall
 
 ## The SEXP data structure
-R  Extensions  provides  SEXP data  structure[^sexp]  that  implements
-datatypes  in  R, building  blocks  of  R objects  (arithmetic  types,
+R  Extensions  provides  SEXP data  structure[^sexp]  that  abstracts
+all built-in datatypes  in  R, building  blocks  of  R objects  (arithmetic  types,
 vectors, matrices,  lists and  the like).  For  the R  Extensions user
 SEXP  models an  R  variable  bound to  a  value. *It is the SEXP variables
 that are used in information exchange between C and R*. The  implementation
 details of  SEXP are  hidden from  the user but  the internals  can be
-queried with the functional  API for SEXP. A common use case is to access 
-the R object data.
+queried with the API for SEXP. A common use case is to access the R object data.
  
 ## Litterature
 
@@ -64,5 +64,7 @@ the R object data.
 3. [R Internals](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html)
   - Technical document of the implementation of R, meant for the R development team.
   - Chapter 1.1 is devoted to the SEXP data structure.
+    
+[^api]: **A**pplication **P**rogramming **I**nterface.
 [^sexp]: To be precise SEXP  is a  C pointer to a SEXPREC structure but the API is
          for SEXP.
