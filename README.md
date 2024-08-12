@@ -30,7 +30,7 @@ In macOS type (Terminal command line):
 
 	export R_HOME=/Library/Frameworks/R.framework/Resources
 	
-R_HOME denotes the R installation location. To compile the examples:
+R_HOME denotes the R installation location. To compile the examples with R C libraries API:
 
 	cc -o rcall -g -I$R_HOME/include -L$R_HOME/lib -lR -lRblas rcall.c
 	
