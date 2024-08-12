@@ -18,7 +18,7 @@ The fourth example creates a 3D matrix in C, rearranges the default row first la
 to column first into a vector and passes the vector to R. R receives the vector 
 and creates 3D matrix with `array` type. 
 
-The datatype for the vector and the matrices used is *double*. See *rcall.c* and *add.R* for details.
+The datatype for the vectors and the matrices used is *double*. See *rcall.c* and *add.R* for details.
 
 Note that even though in R Extensions C programs are compiled the calls to R functions are nevertheless
 always  executed by the R interpreter implemented in and accessible from the *C libraries API for R*. 
