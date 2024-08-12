@@ -21,7 +21,7 @@ and creates 3D matrix with `array` type.
 The datatype for the vector and the matrices used is *double*. See *rcall.c* and *add.R* for details.
 
 Note that even though in R Extensions C programs are compiled the calls to R functions are nevertheless
-always  executed by the R interpreter implemented in and accessible from the R's C library API. 
+always  executed by the R interpreter implemented in and accessible from the *C libraries API for R*. 
 
 ## Usage
 
@@ -30,7 +30,7 @@ In macOS type (Terminal command line):
 
 	export R_HOME=/Library/Frameworks/R.framework/Resources
 	
-R_HOME denotes the R installation location. To compile the examples with R C libraries API:
+R_HOME denotes the R installation location. To compile the examples with C libraries API for R:
 
 	cc -o rcall -g -I$R_HOME/include -L$R_HOME/lib -lR -lRblas rcall.c
 	
