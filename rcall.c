@@ -252,11 +252,13 @@ int main()
      printf("%0.0f ", v3d[i]);
    }
    printf("\n");
-   printf("Indexing 3D matrix row first\n");
+   printf("Indexing 3D matrix column first\n");
    for (int i=0;i<n;i++){
      for (int j=0;j<xdim;j++){
        for (int k=0;k<ydim;k++){
 	 //This is how R sees 3D vector column first
+	 //and the content can be inserted row first
+	 //in a 3D matrix in C.
 	 printf("%0.0f ",v3d[i + j*n+k*n*xdim]);
        }
        printf("\n");
