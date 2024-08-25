@@ -45,6 +45,8 @@ int main()
   printf("\n\n");
   //Setup the call to the R function 
   SEXP add1_call;
+  //The lang2 sets up a function with one parameter (lang2: the function with one parameter)
+  //There are lang1, lang2, lang3, lang4, lang5 and lang6 for functions with 0 up to 5 arguments
   add1_call=PROTECT(lang2(install("add1"), arg));
  
    // Execute the function
