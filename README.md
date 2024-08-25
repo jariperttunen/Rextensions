@@ -14,13 +14,14 @@ The third example uses the C matrix from the second example, sends the matrix da
 as *row-first* to R function that creates R matrix filled by rows to acquire the same view 
 with the original C matrix for correct indexing in R.
 
-The fourth example creates 3D matrix in C, rearranges row first layout to column first for R
-and passes the data as a vector to R. R receives the vector and creates 3D matrix with `array` type. 
+The fourth example creates a 3D matrix in C, rearranges the default row first layout in C 
+to column first into a vector and passes the vector to R. R receives the vector 
+and creates 3D matrix with `array` type. 
 
-The datatype for the vector and the matrices used is *double*. See *rcall.c* and *add.R* for details.
+The datatype for the vectors and the matrices used is *double*. See *rcall.c* and *add.R* for details.
 
 Note that even though in R Extensions C programs are compiled the calls to R functions are nevertheless
-always  executed by the R interpreter implemented in and accessible from the R's C library API. 
+always  executed by the R interpreter implemented in and accessible from the *C libraries API for R*. 
 
 ## Usage
 
@@ -29,7 +30,7 @@ In macOS type (Terminal command line):
 
 	export R_HOME=/Library/Frameworks/R.framework/Resources
 	
-R_HOME denotes the R installation location. To compile the examples:
+R_HOME denotes the R installation location. To compile the examples with C libraries API for R:
 
 	cc -o rcall -g -I$R_HOME/include -L$R_HOME/lib -lR -lRblas rcall.c
 	
