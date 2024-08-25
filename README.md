@@ -15,8 +15,10 @@ as *row-first* to R function that creates R matrix filled by rows to acquire the
 with the original C matrix for correct indexing in R.
 
 The fourth example creates a 3D matrix in C, rearranges the default row first layout in C 
-to column first into a vector and passes the vector to R. R receives the vector 
-and creates 3D matrix with `array` type. 
+to column first into a *vector* and passes the vector to R function. The R function receives the vector 
+and creates 3D matrix with `array` type. After that matrix addition in R style is executed and 
+the modified 3D matrix is returned to C. The C program sees the returned 3D matrix as a *vector* and
+prints out the vector content in contiguous memory and indexing the content as column first.
 
 The datatype for the vectors and the matrices used is *double*. See *rcall.c* and *add.R* for details.
 
