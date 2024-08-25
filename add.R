@@ -84,4 +84,16 @@ matrix3d <- function(v){
         }
         cat("\n")
     }
+    m3d = m3d + 2
+    cat("3D matrix after addition m3d=m3d+2","\n")
+    for (i in 1:3){
+        for (j in 1:5){
+            for (k in 1:6){
+                cat(m3d[i,j,k]," ")
+            }
+            cat("\n")
+        }
+        cat("\n")
+    }
+    return (m3d)
 }
