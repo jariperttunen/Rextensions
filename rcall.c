@@ -243,9 +243,28 @@ int main()
    m3d_call=PROTECT(lang2(install("matrix3d"), r3_arg));
    // Execute the function
    int errorOccurred4;
-   R_tryEval(m3d_call, R_GlobalEnv, &errorOccurred4);
+   SEXP retval2 = R_tryEval(m3d_call, R_GlobalEnv, &errorOccurred4);
+   double* v3d = REAL(retval2);
+   printf("3. In C program\n");
+   printf("Received 3D matrix from R\n");
+   printf("3D matrix in contiguous memory\n");
+   for (int i=0; i< n*xdim*ydim;i++){
+     printf("%0.0f ", v3d[i]);
+   }
+   printf("\n");
+   printf("Indexing 3D matrix row first\n");
+   for (int i=0;i<n;i++){
+     for (int j=0;j<xdim;j++){
+       for (int k=0;k<ydim;k++){
+	 //This is how R sees 3D vector column first
+	 printf("%0.0f ",v3d[i + j*n+k*n*xdim]);
+       }
+       printf("\n");
+     }
+     printf("\n");
+   }
    UNPROTECT(2);
-   printf("\nDone\n");
+   printf("Done\n");
    // Release R environment
    Rf_endEmbeddedR(0);
  
