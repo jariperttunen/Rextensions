@@ -18,7 +18,7 @@ The fourth example creates a 3D matrix in C, rearranges the default row first la
 to column first into a *vector* and passes the vector to R function. The R function receives the vector 
 and creates 3D matrix with `array` type. After that matrix addition in R style is executed and 
 the modified 3D matrix is returned to C. The C program sees the returned 3D matrix as a *vector* and
-prints out the vector content in contiguous memory and then indexing the content as column first.
+prints out the vector content in contiguous memory first and then indexing the content as column first.
 The column first indexing allows the vector content to be inserted in a 3D matrix in C as row first. 
 
 The datatype for the vectors and the matrices used is *double*. See *rcall.c* and *add.R* for details.
