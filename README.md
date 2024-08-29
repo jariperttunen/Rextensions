@@ -64,7 +64,7 @@ queried with the API for SEXP. A common use case is to access the R object data.
 2. [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html)
   - *Must read! Especially the chapter 5.9 Handling R objects in C*.
   - Official guide to R Extensions including documentation for 
-    functions and  datatypes used in these three R Extensions examples.
+    functions and  datatypes used in the R Extensions examples.
 3. [R Internals](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html)
   - Technical document of the implementation of R, meant for the R development team.
   - Chapter 1.1 is devoted to the SEXP data structure.
