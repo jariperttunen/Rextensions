@@ -37,7 +37,7 @@ R_HOME denotes the R installation location. To compile the examples with C libra
 
 	cc -o rcall -g -I$R_HOME/include -L$R_HOME/lib -lR -lRblas rcall.c
 	
-To run the examples:
+To run the examples (make sure R_HOME is set):
 	
 	./rcall
 
