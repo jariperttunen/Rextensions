@@ -21,6 +21,10 @@ the modified 3D matrix is returned to C. The C program sees the returned 3D matr
 prints out the vector content in contiguous memory first and then indexing the content as column first.
 The column first indexing allows the vector content to be inserted in a 3D matrix in C as row first. 
 
+Although in the examples the C code snippets organise the matrices row or columns first the R `matrix` and
+`array` types have option to read data row or column first. But when passing the data one must be aware 
+of the storage layout ordering.
+
 The datatype for the vectors and the matrices used is *double*. See *rcall.c* and *add.R* for details.
 
 Note that even though in R Extensions C programs are compiled the calls to R functions are nevertheless
