@@ -70,6 +70,6 @@ queried with the API for SEXP. A common use case is to access the R object data.
   - Chapter 1.1 is devoted to the SEXP data structure.
     
 [^api]: **A**pplication **P**rogramming **I**nterface.
-[^rhome] Set the R_HOME permanently in the shell (zsh,bash etc. )configuration file.
+[^rhome]: Set the R_HOME permanently in the shell (zsh,bash etc. )configuration file.
 [^sexp]: To be precise SEXP  is a  C pointer to a SEXPREC structure but the API is
          for SEXP.
