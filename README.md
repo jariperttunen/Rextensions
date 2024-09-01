@@ -1,7 +1,7 @@
 # R Extensions
 
 Four examples demonstrate techniques to call R functions from C
-with R's C library API, a.k.a. *R Extensions*. They also highlight row-major (row-first) 
+with R's C library API[^api], a.k.a. *R Extensions*. They also highlight row-major (row-first) 
 vs. column-major (column-first) matrix storage layout in C and R respectively.
 
 The first example creates one vector in C, passes on the vector data to R function that
@@ -28,7 +28,7 @@ always  executed by the R interpreter implemented in and accessible from the *C 
 
 ## Usage
 
-The R runtime system requires R_HOME environment variable. 
+The R runtime system requires R_HOME environment variable[^rhome]. 
 In macOS type (Terminal command line):
 
 	export R_HOME=/Library/Frameworks/R.framework/Resources
@@ -70,5 +70,6 @@ queried with the API for SEXP. A common use case is to access the R object data.
   - Chapter 1.1 is devoted to the SEXP data structure.
     
 [^api]: **A**pplication **P**rogramming **I**nterface.
+[^rhome] Set the R_HOME permanently in the shell (zsh,bash etc. )configuration file.
 [^sexp]: To be precise SEXP  is a  C pointer to a SEXPREC structure but the API is
          for SEXP.
