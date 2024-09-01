@@ -1,7 +1,7 @@
 # R Extensions
 
 Four examples demonstrate techniques to call R functions from C
-with R's C library API[^api], a.k.a. *R Extensions*. They also highlight row-major (row-first) 
+with *C libraries for R API*[^api], a.k.a. *R Extensions*. They also highlight row-major (row-first) 
 vs. column-major (column-first) matrix storage layout in C and R respectively.
 
 The first example creates one vector in C, passes on the vector data to R function that
@@ -24,7 +24,7 @@ The column first indexing allows the vector content to be inserted in a 3D matri
 The datatype for the vectors and the matrices used is *double*. See *rcall.c* and *add.R* for details.
 
 Note that even though in R Extensions C programs are compiled the calls to R functions are nevertheless
-always  executed by the R interpreter implemented in and accessible from the *C libraries API for R*. 
+always  executed by the R interpreter implemented in and accessible from the C libraries API for R. 
 
 ## Usage
 
